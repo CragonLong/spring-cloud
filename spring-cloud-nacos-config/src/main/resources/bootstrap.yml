@@ -1,6 +1,24 @@
+#spring:
+#  profiles:
+#    active: dev
+#  cloud:
+#    nacos:
+#      config:
+#        server-addr: localhost:8848
+#        file-extension: yaml
+#        prefix: cragon
+#        namespace: 'b7e49a8e-b436-4267-86b1-194b64b2ade0'
+#        group: GROUP_A
 spring:
   cloud:
     nacos:
       config:
         server-addr: localhost:8848
         file-extension: yaml
+        extension-configs:
+          - dataId: ext-config-one.yaml
+            group: DEFAULT_GROUP
+            refresh: true
+          - dataId: ext-config-two.yaml
+            group: DEFAULT_GROUP
+            refresh: false
